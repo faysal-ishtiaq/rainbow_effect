@@ -13,7 +13,7 @@ img_width = input_image.size[0]
 
 input_image = input_image.convert("RGB")
 
-filter_image = Image.new("RGB", [img_width, img_height], (255, 255, 255, 255))
+filter_image = Image.new("RGB", [img_height, img_width], (255, 255, 255, 255))
 
 height_break = []
 for num in range(0, img_height, int(img_height/6)):
@@ -29,6 +29,8 @@ for i in range(0, 6):
     for j in range(img_width):
         for k in range(height_break[i], height_break[i+1]):
             pixels[k, j] = color_codes[i]
+            
+filter_image.rotate(270)
 
 enhancer = ImageEnhance.Color(input_image)
 
