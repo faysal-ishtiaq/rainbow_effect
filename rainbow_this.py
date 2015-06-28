@@ -30,7 +30,7 @@ for i in range(0, 6):
         for k in range(height_break[i], height_break[i+1]):
             pixels[k, j] = color_codes[i]
             
-filter_image.rotate(270)
+filter_image = filter_image.rotate(270)
 
 enhancer = ImageEnhance.Color(input_image)
 
